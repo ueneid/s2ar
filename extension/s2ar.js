@@ -22,7 +22,7 @@
 
       ext.connect = function(str) {
         roomId = str;
-        socket = io.connect('http://' + hostname);
+        socket = io.connect('https://' + hostname);
         socket.on("connect", function() {
           connected = true;
           socket.emit("from_client", JSON.stringify({roomId: roomId, command: "connect"}));
